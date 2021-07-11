@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
   <title>Frontend Mentor | Clock App</title>
-  <!--<link rel="stylesheet" href="./src/css/main.css">-->
-  <link rel="stylesheet" href="./src/scss/main.scss">
+  <link rel="stylesheet" href="./src/css/main.css">
+ <!-- <link rel="stylesheet" href="./src/scss/main.scss"> -->
 </head>
 
 <body>
@@ -17,30 +18,88 @@
     <header class="sr-only">
       <h1>Clock app</h1>
     </header>
-    <main>
+    <main class="main">
       <section class="primary">
+        <!--quortations-->
+        <div class="intro">
+          <p class="quortations">
+            <q class="quortes"></q>
+            <span class="author"></span>
+          </p>
+          <button class="refresh"><img class="refresh__img" src="./assets/desktop/icon-refresh.svg" alt=""></button>
+        </div>
+
+        <!--time and location-->
+        <div class="time__section">
+          <div class="greeting">
+            <div class="time__sectionA">
+              <div class="time__icon"><img src="./assets/desktop/icon-sun.svg" alt=""></div>
+              <h2 class="greet__msg">Good morning</h2>
+            </div>
+            <time class="time__status" datetime="00:00">00:00</time>
+            <span class="time__zone"></span>
+          </div>
+          <p class="location"></p>
+        </div>
+
+        <div class="swithCtl">
+          <label class="switch">
+            <span class="more">more</span>
+            <input type="checkbox" checked>
+            <span class="slider round">
+              <img src="./assets/desktop/icon-arrow-up.svg" alt="">
+            </span>
+          </label>
+        </div>
 
       </section>
       <section class="secondary">
-        <p>
-          <q class="quortes">
-          </q>
-          <span class="author"></span>
-        </p>
+        <ul>
+          <li>
+            <label class="list__label">
+              Current timezone
+            </label>
+            <h3 class="list__value">
+
+            </h3>
+          </li>
+          <li>
+            <label class="list__label">
+              Day of the year
+            </label>
+            <h3 class="list__value">
+
+            </h3>
+          </li>
+          <li>
+            <label class="list__label">
+              Day of the week
+            </label>
+            <h3 class="list__value">
+
+            </h3>
+          </li>
+          <li>
+            <label class="list__label">
+              Week number
+            </label>
+            <h3 class="list__value">
+
+            </h3>
+          </li>
+        </ul>
 
       </section>
 
     </main>
-    , it's currently
+    <!-- , it's currently
     in
     More
     Less
-    Current timezone
-    Day of the year
-    Day of the week
-    Week number
+    
   </div>
-  <script src="main.js"></script>
+-->
+    <script src="main.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,34 @@
+.time__section {
+    margin-top: 16rem;
+   // max-width: 17.375rem;
+}
+
+.time__sectionA {
+    display: flex;
+    justify-content: start;
+    gap: 2rem;
+}
+
+.time__icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.greet__msg {
+    font-weight: 100;
+    font-size: 0.9375rem;
+}
+
+.time__status {
+	font-size: 6.25rem;
+    font-weight: 700;
+}
+.location {
+	font-size: 0.9375rem;
+	font-weight: 500;
+}
+
+.time__toggle {
+    margin-top: 4rem;
+}

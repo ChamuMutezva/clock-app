@@ -121,34 +121,81 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 var quortes = document.querySelector(".quortes");
 var author = document.querySelector(".author");
 var wrapper = document.querySelector(".wrapper");
+var time__zone = document.querySelector(".time__zone");
+var location = document.querySelector(".location");
+var refresh = document.querySelector(".refresh");
+var toggleSwitch = document.querySelector('input[type="checkbox"]');
+var list__values = Array.from(document.querySelectorAll(".list__value"));
+console.log(list__values[0]);
 var current__date = "";
 var current__time = "";
 var hour = "";
+var min = "";
+var time__abbr = "";
+var time__status = document.querySelector(".time__status");
 console.log(quortes);
-fetch('https://api.quotable.io/random').then(function (response) {
-  return response.json();
-}).then(function (data) {
-  // console.log(data)
-  console.log("".concat(data.content, " \u2014").concat(data.author));
-  quortes.innerHTML = data.content;
-  author.innerHTML = data.author;
-});
-fetch('http://worldtimeapi.org/api/ip').then(function (response) {
+
+var timeApi = function timeApi() {
+  fetch('http://worldtimeapi.org/api/ip').then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    console.log(data);
+    console.log(data.datetime);
+    var date__arr = data.datetime.split("T");
+    var time__arr = date__arr[1].split(".");
+    current__date = date__arr[0];
+    current__time = time__arr[0];
+    hours = Number(current__time.split(":")[0]);
+    min = Number(current__time.split(":")[1]);
+    console.log(current__date);
+    console.log(time__arr);
+    console.log(current__time);
+    console.log(min);
+    console.log(Number(hours));
+    hours <= 12 ? wrapper.classList.remove("evening") : wrapper.classList.add("evening");
+    time__zone.innerHTML = data.abbreviation;
+    min = min < 10 ? "0".concat(min) : min;
+    hours = hours < 10 ? "0".concat(hours) : hours;
+    time__status.innerHTML = "".concat(hours, ":").concat(min);
+    list__values[1].innerHTML = data.day_of_year + 1;
+    list__values[2].innerHTML = data.day_of_week + 1;
+    list__values[3].innerHTML = data.week_number + 1;
+  });
+};
+
+var reFreshQuortes = function reFreshQuortes() {
+  fetch('https://api.quotable.io/random').then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    // console.log(data)
+    console.log("".concat(data.content, " \u2014").concat(data.author));
+    quortes.innerHTML = data.content;
+    author.innerHTML = data.author;
+  });
+};
+
+fetch('https://freegeoip.app/json/').then(function (response) {
   return response.json();
 }).then(function (data) {
   console.log(data);
-  console.log(data.datetime);
-  var date__arr = data.datetime.split("T");
-  var time__arr = date__arr[1].split(".");
-  current__date = date__arr[0];
-  current__time = time__arr[0];
-  hours = current__time.split(":")[0];
-  console.log(current__date);
-  console.log(time__arr);
-  console.log(current__time);
-  console.log(hours);
-  console.log(Number(hours));
-  Number(hours) >= 0 || Number(hours) <= 12 ? wrapper.classList.remove("evening") : wrapper.classList.add("evening");
+  console.log(data.time_zone);
+  location.innerHTML = "In ".concat(data.city, ", ").concat(data.country_name);
+  list__values[0].innerHTML = data.time_zone;
+});
+timeApi();
+reFreshQuortes();
+refresh.addEventListener("click", reFreshQuortes);
+setInterval(function () {
+  console.log("counter");
+  timeApi();
+  reFreshQuortes();
+}, 60000);
+toggleSwitch.addEventListener("click", function () {
+  console.log("toggle button clicked");
+  var toggle__intro = document.querySelector(".intro");
+  var time__section = document.querySelector(".time__section");
+  toggle__intro.classList.toggle("intro__out");
+  time__section.classList.toggle("time__toggle");
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -178,7 +225,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53245" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52676" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
