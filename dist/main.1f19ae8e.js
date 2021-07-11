@@ -122,7 +122,7 @@ var quortes = document.querySelector(".quortes");
 var author = document.querySelector(".author");
 var wrapper = document.querySelector(".wrapper");
 var time__zone = document.querySelector(".time__zone");
-var location = document.querySelector(".location");
+var located = document.querySelector(".location");
 var refresh = document.querySelector(".refresh");
 var toggleSwitch = document.querySelector('input[type="checkbox"]');
 var list__values = Array.from(document.querySelectorAll(".list__value"));
@@ -179,7 +179,7 @@ fetch('https://freegeoip.app/json/').then(function (response) {
 }).then(function (data) {
   console.log(data);
   console.log(data.time_zone);
-  location.innerHTML = "In ".concat(data.city, ", ").concat(data.country_name);
+  located.innerHTML = "In ".concat(data.city, ", ").concat(data.country_name);
   list__values[0].innerHTML = data.time_zone;
 });
 timeApi();

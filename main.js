@@ -2,7 +2,7 @@ const quortes = document.querySelector(".quortes")
 const author = document.querySelector(".author")
 const wrapper = document.querySelector(".wrapper")
 const time__zone = document.querySelector(".time__zone")
-const location = document.querySelector(".location")
+const located = document.querySelector(".location")
 const refresh = document.querySelector(".refresh")
 const toggleSwitch = document.querySelector('input[type="checkbox"]')
 const list__values = Array.from(document.querySelectorAll(".list__value"))
@@ -67,7 +67,7 @@ fetch('https://freegeoip.app/json/')
     .then(data => {
         console.log(data)
         console.log(data.time_zone)
-        location.innerHTML = `In ${data.city}, ${data.country_name}`
+        located.innerHTML = `In ${data.city}, ${data.country_name}`
        list__values[0].innerHTML = data.time_zone
       
     })
