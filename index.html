@@ -10,7 +10,7 @@
     rel="stylesheet">
   <title>Frontend Mentor | Clock App</title>
   <link rel="stylesheet" href="./src/css/main.css">
- <!-- <link rel="stylesheet" href="./src/scss/main.scss"> -->
+ <link rel="stylesheet" href="./src/scss/main.scss"> 
 </head>
 
 <body>
@@ -33,8 +33,12 @@
         <div class="time__section">
           <div class="greeting">
             <div class="time__sectionA">
-              <div class="time__icon"><img src="./assets/desktop/icon-sun.svg" alt=""></div>
+              <div class="time__icon">
+                <img class="time__icon__img" src="./assets/desktop/icon-sun.svg" alt="">
+                <img class="time__icon__img" src="./assets/desktop/icon-moon.svg" alt="">
+              </div>
               <h2 class="greet__msg">Good morning</h2>
+              
             </div>
             <time class="time__status" datetime="00:00">00:00</time>
             <span class="time__zone"></span>
@@ -53,9 +57,10 @@
         </div>
 
       </section>
-      <section class="secondary">
-        <ul>
-          <li>
+      <section class="secondary hide__sec">
+        <ul class="secondary__data">
+
+          <li class="list__items">
             <label class="list__label">
               Current timezone
             </label>
@@ -63,7 +68,7 @@
 
             </h3>
           </li>
-          <li>
+          <li class="list__items">
             <label class="list__label">
               Day of the year
             </label>
@@ -71,7 +76,7 @@
 
             </h3>
           </li>
-          <li>
+          <li class="list__items">
             <label class="list__label">
               Day of the week
             </label>
@@ -79,7 +84,7 @@
 
             </h3>
           </li>
-          <li>
+          <li class="list__items">
             <label class="list__label">
               Week number
             </label>

@@ -125,35 +125,45 @@ var time__zone = document.querySelector(".time__zone");
 var located = document.querySelector(".location");
 var refresh = document.querySelector(".refresh");
 var toggleSwitch = document.querySelector('input[type="checkbox"]');
-var list__values = Array.from(document.querySelectorAll(".list__value"));
-console.log(list__values[0]);
+var list__values = Array.from(document.querySelectorAll(".list__value")); //console.log(list__values[0])
+
 var current__date = "";
 var current__time = "";
 var hour = "";
 var min = "";
 var time__abbr = "";
-var time__status = document.querySelector(".time__status");
-console.log(quortes);
+var time__status = document.querySelector(".time__status"); //console.log(quortes)
 
 var timeApi = function timeApi() {
   fetch('http://worldtimeapi.org/api/ip').then(function (response) {
     return response.json();
   }).then(function (data) {
-    console.log(data);
-    console.log(data.datetime);
+    // console.log(data)
+    //  console.log(data.datetime)
+    var greet__msg = document.querySelector(".greet__msg");
+    var greet__img = Array.from(document.querySelectorAll(".time__icon__img"));
     var date__arr = data.datetime.split("T");
     var time__arr = date__arr[1].split(".");
     current__date = date__arr[0];
     current__time = time__arr[0];
     hours = Number(current__time.split(":")[0]);
     min = Number(current__time.split(":")[1]);
-    console.log(current__date);
-    console.log(time__arr);
-    console.log(current__time);
-    console.log(min);
-    console.log(Number(hours));
+    /*   console.log(greet__img)
+       console.log(current__date)
+       console.log(time__arr)
+       console.log(current__time)
+       console.log(min)
+       console.log(Number(hours)) */
+    //  greet__img[1].classList.add("hide__icon")
+
     hours <= 12 ? wrapper.classList.remove("evening") : wrapper.classList.add("evening");
+    hours < 5 || hours >= 18 ? greet__msg.innerHTML = "Good Evening, <span class=\"greet__msg__hide\">it's currently</span>" : hours < 12 ? greet__msg.innerHTML = "Good Morning, <span class=\"greet__msg__hide\">it's currently</span>" : greet__msg.innerHTML = "Good Afternoon, <span class=\"greet__msg__hide\">it's currently</span>";
+    hours >= 6 && hours <= 17 ? greet__img[0].classList.remove("hide__icon") : greet__img[0].classList.add("hide__icon");
+    hours >= 6 && hours <= 17 ? greet__img[1].classList.add("hide__icon") : greet__img[1].classList.remove("hide__icon");
+    console.log(hours);
     time__zone.innerHTML = data.abbreviation;
+    console.log(greet__img[0]);
+    console.log(greet__img[1]);
     min = min < 10 ? "0".concat(min) : min;
     hours = hours < 10 ? "0".concat(hours) : hours;
     time__status.innerHTML = "".concat(hours, ":").concat(min);
@@ -164,11 +174,12 @@ var timeApi = function timeApi() {
 };
 
 var reFreshQuortes = function reFreshQuortes() {
-  fetch('https://api.quotable.io/random').then(function (response) {
+  fetch('https://api.quotable.io/random') // fetch('https://programming-quotes-api.herokuapp.com/')
+  .then(function (response) {
     return response.json();
   }).then(function (data) {
-    // console.log(data)
-    console.log("".concat(data.content, " \u2014").concat(data.author));
+    //  console.log(data)
+    // console.log(`${data.content} —${data.author}`)
     quortes.innerHTML = data.content;
     author.innerHTML = data.author;
   });
@@ -177,8 +188,8 @@ var reFreshQuortes = function reFreshQuortes() {
 fetch('https://freegeoip.app/json/').then(function (response) {
   return response.json();
 }).then(function (data) {
-  console.log(data);
-  console.log(data.time_zone);
+  //  console.log(data)
+  //  console.log(data.time_zone)
   located.innerHTML = "In ".concat(data.city, ", ").concat(data.country_name);
   list__values[0].innerHTML = data.time_zone;
 });
@@ -186,16 +197,18 @@ timeApi();
 reFreshQuortes();
 refresh.addEventListener("click", reFreshQuortes);
 setInterval(function () {
-  console.log("counter");
+  //  console.log("counter")
   timeApi();
   reFreshQuortes();
 }, 60000);
 toggleSwitch.addEventListener("click", function () {
-  console.log("toggle button clicked");
+  //  console.log("toggle button clicked")
+  var secondary = document.querySelector(".secondary");
   var toggle__intro = document.querySelector(".intro");
   var time__section = document.querySelector(".time__section");
   toggle__intro.classList.toggle("intro__out");
   time__section.classList.toggle("time__toggle");
+  secondary.classList.toggle("hide__sec");
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -225,7 +238,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52676" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65495" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

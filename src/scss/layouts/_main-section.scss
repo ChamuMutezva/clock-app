@@ -1,0 +1,9 @@
+.primary {
+	padding: 0 1.5rem 2rem;
+}
+
+@media screen and (min-width: 38.75rem) {
+	.primary {
+		padding: 0 4rem 2rem;
+	}
+}

@@ -1,6 +1,6 @@
 .time__section {
     margin-top: 16rem;
-   // max-width: 17.375rem;
+    // max-width: 17.375rem;
 }
 
 .time__sectionA {
@@ -18,17 +18,39 @@
 .greet__msg {
     font-weight: 100;
     font-size: 0.9375rem;
+    text-transform: uppercase;
+}
+
+.greet__msg__hide {
+	display: none;
 }
 
 .time__status {
-	font-size: 6.25rem;
+    font-size: 6.25rem;
     font-weight: 700;
 }
+
 .location {
-	font-size: 0.9375rem;
-	font-weight: 500;
+    font-size: 0.9375rem;
+    font-weight: 500;
 }
 
 .time__toggle {
     margin-top: 4rem;
+}
+.time__icon__img {
+	display: block;
+}
+
+.hide__icon {
+    left: 0;
+    top: 0;
+    position: absolute;
+    display: none;
+}
+
+@media screen and (min-width: 38.75rem) {
+	.greet__msg__hide {
+        display: inline-block;
+    }
 }
