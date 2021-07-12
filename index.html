@@ -10,7 +10,7 @@
     rel="stylesheet">
   <title>Frontend Mentor | Clock App</title>
   <link rel="stylesheet" href="./src/css/main.css">
- <link rel="stylesheet" href="./src/scss/main.scss"> 
+  <link rel="stylesheet" href="./src/scss/main.scss">
 </head>
 
 <body>
@@ -29,31 +29,32 @@
           <button class="refresh"><img class="refresh__img" src="./assets/desktop/icon-refresh.svg" alt=""></button>
         </div>
 
-        <!--time and location-->
-        <div class="time__section">
-          <div class="greeting">
-            <div class="time__sectionA">
-              <div class="time__icon">
-                <img class="time__icon__img" src="./assets/desktop/icon-sun.svg" alt="">
-                <img class="time__icon__img" src="./assets/desktop/icon-moon.svg" alt="">
-              </div>
-              <h2 class="greet__msg">Good morning</h2>
-              
-            </div>
-            <time class="time__status" datetime="00:00">00:00</time>
-            <span class="time__zone"></span>
-          </div>
-          <p class="location"></p>
-        </div>
+        <div class="time__location">
+          <!--time and location-->
+          <div class="time__section">
+            <div class="greeting">
+              <div class="time__sectionA">
+                <div class="time__icon">
+                  <img class="time__icon__img" src="./assets/desktop/icon-sun.svg" alt="">
+                  <img class="time__icon__img" src="./assets/desktop/icon-moon.svg" alt="">
+                </div>
+                <h2 class="greet__msg">Good morning</h2>
 
-        <div class="swithCtl">
-          <label class="switch">
-            <span class="more">more</span>
-            <input type="checkbox" checked>
-            <span class="slider round">
-              <img src="./assets/desktop/icon-arrow-up.svg" alt="">
-            </span>
-          </label>
+              </div>
+              <time class="time__status" datetime="00:00">00:00</time>
+              <span class="time__zone"></span>
+            </div>
+            <p class="location"></p>
+          </div>
+          <div class="swithCtl">
+            <label class="switch">
+              <span class="more">more</span>
+              <input type="checkbox" checked>
+              <span class="slider round">
+                <img src="./assets/desktop/icon-arrow-up.svg" alt="">
+              </span>
+            </label>
+          </div>
         </div>
 
       </section>

@@ -1,20 +1,27 @@
 @use '../abstracts';
+
 .secondary {
 	background-color: abstracts.$lt-grey;
+	position: relative;
+	bottom: 0;
 }
+
 .secondary__data {
 	padding: 2rem 1.5rem;
 	margin-bottom: 0;
 	margin-top: 3rem;
-	li + li {
+
+	li+li {
 		margin-bottom: 1rem;
 	}
 }
+
 .list__items {
 	display: flex;
 	justify-content: space-between;
 	align-items: baseline;
 }
+
 .list__label {
 	font-size: 0.625rem;
 	line-height: 1.75;
@@ -22,11 +29,36 @@
 	text-transform: uppercase;
 	color: abstracts.$mid-grey;
 }
+
 .list__value {
 	font-size: 1.25rem;
 	font-weight: 900;
 	color: abstracts.$mid-grey;
 }
-.hide__sec{   
-    display: none;
+
+.hide__sec {
+	display: none;
+}
+
+@media screen and (min-width: 38.75rem) {
+	.secondary__data {
+		padding: 2rem 4rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+
+		li+li {
+			margin-bottom: 0;
+		}
+	}
+
+	.list__items {
+		flex-direction: column;
+	}
+}
+
+@media screen and (min-width: 67.5rem) {
+	.secondary {
+		min-height: 40vh;
+	}
 }

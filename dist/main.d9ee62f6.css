@@ -111,6 +111,13 @@ p {
     padding: 0 4rem 2rem;
   }
 }
+@media screen and (min-width: 67.5rem) {
+  .time__location {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
 .wrapper {
   min-height: 100vh;
   background-image: url("/bg-image-daytime.6b91eee5.jpg");
@@ -119,6 +126,7 @@ p {
   background-color: #303030;
   background-blend-mode: overlay;
   padding: 2rem 0 0;
+  position: relative;
 }
 
 .evening {
@@ -310,6 +318,8 @@ input:checked+.slider:before {
 */
 .secondary {
   background-color: #d8d8d8;
+  position: relative;
+  bottom: 0;
 }
 
 .secondary__data {
@@ -343,6 +353,27 @@ input:checked+.slider:before {
 
 .hide__sec {
   display: none;
+}
+
+@media screen and (min-width: 38.75rem) {
+  .secondary__data {
+    padding: 2rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .secondary__data li + li {
+    margin-bottom: 0;
+  }
+
+  .list__items {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 67.5rem) {
+  .secondary {
+    min-height: 40vh;
+  }
 }
 
 /*# sourceMappingURL=/main.d9ee62f6.css.map */
