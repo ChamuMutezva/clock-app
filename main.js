@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import gsap from "gsap"
 const quortes = document.querySelector(".quortes")
 const author = document.querySelector(".author")
