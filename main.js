@@ -17,7 +17,7 @@ const time__status = document.querySelector(".time__status")
 //console.log(quortes)
 
 const timeApi = () => {
-    fetch('https://worldtimeapi.org/api/ip')
+    fetch('https://worldtimeapi.org/api/ip') //'https://worldtimeapi.org/api/ip'
         .then(response => response.json())
         .then(data => {
             // console.log(data)
@@ -123,5 +123,5 @@ toggleSwitch.addEventListener("click", () => {
     toggle__intro.classList.toggle("intro__out")
     time__section.classList.toggle("time__toggle")
     secondary.classList.toggle("hide__sec")
-   // gsap.to(".slider", { duration: 1.5,  rotation: 180 })
+   gsap.to(".slider", { duration: 1.5,  rotation: 180 })
 })

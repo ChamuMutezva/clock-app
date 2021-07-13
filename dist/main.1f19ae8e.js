@@ -135,7 +135,8 @@ var time__abbr = "";
 var time__status = document.querySelector(".time__status"); //console.log(quortes)
 
 var timeApi = function timeApi() {
-  fetch('https://worldtimeapi.org/api/ip').then(function (response) {
+  fetch('https://worldtimeapi.org/api/ip') //'https://worldtimeapi.org/api/ip'
+  .then(function (response) {
     return response.json();
   }).then(function (data) {
     // console.log(data)
@@ -211,7 +212,11 @@ toggleSwitch.addEventListener("click", function () {
   console.log(more.innerHTML);
   toggle__intro.classList.toggle("intro__out");
   time__section.classList.toggle("time__toggle");
-  secondary.classList.toggle("hide__sec"); // gsap.to(".slider", { duration: 1.5,  rotation: 180 })
+  secondary.classList.toggle("hide__sec");
+  gsap.to(".slider", {
+    duration: 1.5,
+    rotation: 180
+  });
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
