@@ -6,6 +6,7 @@ const located = document.querySelector(".location")
 const refresh = document.querySelector(".refresh")
 const toggleSwitch = document.querySelector('input[type="checkbox"]')
 const list__values = Array.from(document.querySelectorAll(".list__value"))
+let flip = true
 
 //console.log(list__values[0])
 let current__date = ""
@@ -123,5 +124,15 @@ toggleSwitch.addEventListener("click", () => {
     toggle__intro.classList.toggle("intro__out")
     time__section.classList.toggle("time__toggle")
     secondary.classList.toggle("hide__sec")
-   gsap.to(".slider", { duration: 1.5,  rotation: 180 })
+   // gsap.set(".slider", { transformOrigin: "50% 50%"})
+  
+   if (flip) {
+    gsap.to(".slider", { duration: 1,  rotation: 180 })
+    gsap.to(secondary, {duration: 2, y: 50, ease: "elastic"})
+   } else {
+    gsap.to(".slider", { duration: 1,  rotation: -180 })
+   // gsap.from(secondary, {duration: 2, y: -50, ease: "back"})
+    gsap.from(secondary, {duration: 3, y: 100, opacity: 0, scale: 0.5});
+   }
+   flip = !flip
 })
