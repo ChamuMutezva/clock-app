@@ -1,5 +1,5 @@
-import _ from 'lodash'
-import gsap from "gsap"
+//import _ from 'lodash'
+//import gsap from "gsap"
 const quortes = document.querySelector(".quortes")
 const author = document.querySelector(".author")
 const wrapper = document.querySelector(".wrapper")
@@ -125,5 +125,5 @@ toggleSwitch.addEventListener("click", () => {
     toggle__intro.classList.toggle("intro__out")
     time__section.classList.toggle("time__toggle")
     secondary.classList.toggle("hide__sec")
-    gsap.to(".slider", { duration: 1.5,  rotation: 180 })
+   // gsap.to(".slider", { duration: 1.5,  rotation: 180 })
 })
