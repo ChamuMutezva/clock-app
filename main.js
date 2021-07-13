@@ -1,4 +1,4 @@
-//const gsap = require("gsap")
+import gsap from "gsap"
 const quortes = document.querySelector(".quortes")
 const author = document.querySelector(".author")
 const wrapper = document.querySelector(".wrapper")
