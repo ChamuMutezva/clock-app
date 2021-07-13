@@ -1,5 +1,3 @@
-//import _ from 'lodash'
-//import gsap from "gsap"
 const quortes = document.querySelector(".quortes")
 const author = document.querySelector(".author")
 const wrapper = document.querySelector(".wrapper")
@@ -19,7 +17,7 @@ const time__status = document.querySelector(".time__status")
 //console.log(quortes)
 
 const timeApi = () => {
-    fetch('http://worldtimeapi.org/api/ip')
+    fetch('https://worldtimeapi.org/api/ip')
         .then(response => response.json())
         .then(data => {
             // console.log(data)

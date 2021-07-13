@@ -118,8 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-//import _ from 'lodash'
-//import gsap from "gsap"
 var quortes = document.querySelector(".quortes");
 var author = document.querySelector(".author");
 var wrapper = document.querySelector(".wrapper");
@@ -137,7 +135,7 @@ var time__abbr = "";
 var time__status = document.querySelector(".time__status"); //console.log(quortes)
 
 var timeApi = function timeApi() {
-  fetch('http://worldtimeapi.org/api/ip').then(function (response) {
+  fetch('https://worldtimeapi.org/api/ip').then(function (response) {
     return response.json();
   }).then(function (data) {
     // console.log(data)
