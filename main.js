@@ -1,3 +1,4 @@
+import gsap  from "gsap"
 const quortes = document.querySelector(".quortes")
 const author = document.querySelector(".author")
 const wrapper = document.querySelector(".wrapper")
@@ -10,7 +11,7 @@ const list__values = Array.from(document.querySelectorAll(".list__value"))
 //console.log(list__values[0])
 let current__date = ""
 let current__time = ""
-let hour = ""
+let hours = ""
 let min = ""
 let time__abbr = ""
 const time__status = document.querySelector(".time__status")
@@ -112,11 +113,16 @@ setInterval(() => {
 }, 60000)
 
 toggleSwitch.addEventListener("click", () => {
-    //  console.log("toggle button clicked")
+  
+    const more = document.querySelector(".more")
     const secondary = document.querySelector(".secondary")
     const toggle__intro = document.querySelector(".intro")
     const time__section = document.querySelector(".time__section")
+    const slider = document.querySelector(".slider")
+    more.innerHTML === "more" ? more.innerHTML = "less" : more.innerHTML = "more"
+    console.log(more.innerHTML)
     toggle__intro.classList.toggle("intro__out")
     time__section.classList.toggle("time__toggle")
     secondary.classList.toggle("hide__sec")
+    gsap.to(".slider", { duration: 1.5,  rotation: 180 })
 })
