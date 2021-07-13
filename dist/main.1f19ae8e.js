@@ -5681,11 +5681,7 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 exports.TweenMax = TweenMaxWithCSS;
 exports.default = exports.gsap = gsapWithCSS;
 },{"./gsap-core.js":"node_modules/gsap/gsap-core.js","./CSSPlugin.js":"node_modules/gsap/CSSPlugin.js"}],"main.js":[function(require,module,exports) {
-"use strict";
-
-var _gsap = _interopRequireDefault(require("gsap"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var gsap = require("gsap");
 
 var quortes = document.querySelector(".quortes");
 var author = document.querySelector(".author");
@@ -5781,8 +5777,7 @@ toggleSwitch.addEventListener("click", function () {
   toggle__intro.classList.toggle("intro__out");
   time__section.classList.toggle("time__toggle");
   secondary.classList.toggle("hide__sec");
-
-  _gsap.default.to(".slider", {
+  gsap.to(".slider", {
     duration: 1.5,
     rotation: 180
   });
@@ -5815,7 +5810,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61644" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61973" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
