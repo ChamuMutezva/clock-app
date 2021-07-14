@@ -4,6 +4,7 @@
 	background-color: abstracts.$lt-grey;
 	position: relative;
 	bottom: 0;
+	//color: abstracts.$mid-grey;
 }
 
 .secondary__data {
@@ -63,10 +64,21 @@ background-color: abstracts.$mid-grey;
 	.list__items {
 		flex-direction: column;
 	}
+
+	.list__label {
+		font-size: 0.8125rem;
+	}
+	.list__value {
+		font-size: 2.5rem;		
+	}
 }
 
 @media screen and (min-width: 67.5rem) {
 	.secondary {
 		min-height: 40vh;
+	}
+	.secondary__data {
+		padding: 4rem 10.3125rem;
+		
 	}
 }

@@ -7,6 +7,7 @@ const refresh = document.querySelector(".refresh")
 const toggleSwitch = document.querySelector('input[type="checkbox"]')
 const list__values = Array.from(document.querySelectorAll(".list__value"))
 let flip = true
+let refreshRotation = true
 
 //console.log(list__values[0])
 let current__date = ""
@@ -77,6 +78,13 @@ const timeApi = () => {
 
 
 const reFreshQuortes = () => {
+    gsap.set(".refresh__img", { transformOrigin: "50% 50%" })
+    if (refreshRotation) {
+        gsap.to(".refresh__img", { duration: 1, rotation: 360 })
+    } else {
+        gsap.to(".refresh__img", { duration: 1, rotation: -360 })
+    }
+    refreshRotation = !refreshRotation
     fetch('https://api.quotable.io/random')
         // fetch('https://programming-quotes-api.herokuapp.com/')
         .then(response => response.json())
@@ -128,10 +136,14 @@ toggleSwitch.addEventListener("click", () => {
     secondary.classList.toggle("hide__sec")
     // gsap.set(".slider", { transformOrigin: "50% 50%"})
 
-    
+    secondary.classList.toggle("dark__mode")
     list__values.forEach(item => {
         item.classList.toggle("light__mode")
     })
+    list__label.forEach(item => {
+        item.classList.toggle("light__mode")
+    })
+
 
     if (flip) {
         gsap.to(".slider", { duration: 1, rotation: 180 })
@@ -140,7 +152,7 @@ toggleSwitch.addEventListener("click", () => {
     } else {
         gsap.to(".slider", { duration: 1, rotation: -180 })
         // gsap.from(secondary, {duration: 2, y: -50, ease: "back"})
-        gsap.from(secondary, { duration: 3, y: 100, opacity: 0, scale: 0.5 });
+        gsap.from(secondary, { duration: 1, x: 50, ease: "back" });
     }
     flip = !flip
 })

@@ -4,11 +4,14 @@
 
 @media screen and (min-width: 38.75rem) {
 	.primary {
-		padding: 0 4rem 2rem;
+		padding: 2.5rem 4rem 2rem;
 	}
 }
 
 @media screen and (min-width: 67.5rem) {
+	.primary {
+		padding: 1.5rem 10.3125rem 2rem;
+	}
 	.time__location {
 		display: flex;
 		justify-content: space-between;

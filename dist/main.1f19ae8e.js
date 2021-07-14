@@ -126,7 +126,8 @@ var located = document.querySelector(".location");
 var refresh = document.querySelector(".refresh");
 var toggleSwitch = document.querySelector('input[type="checkbox"]');
 var list__values = Array.from(document.querySelectorAll(".list__value"));
-var flip = true; //console.log(list__values[0])
+var flip = true;
+var refreshRotation = true; //console.log(list__values[0])
 
 var current__date = "";
 var current__time = "";
@@ -176,6 +177,23 @@ var timeApi = function timeApi() {
 };
 
 var reFreshQuortes = function reFreshQuortes() {
+  gsap.set(".refresh__img", {
+    transformOrigin: "50% 50%"
+  });
+
+  if (refreshRotation) {
+    gsap.to(".refresh__img", {
+      duration: 1,
+      rotation: 360
+    });
+  } else {
+    gsap.to(".refresh__img", {
+      duration: 1,
+      rotation: -360
+    });
+  }
+
+  refreshRotation = !refreshRotation;
   fetch('https://api.quotable.io/random') // fetch('https://programming-quotes-api.herokuapp.com/')
   .then(function (response) {
     return response.json();
@@ -216,7 +234,11 @@ toggleSwitch.addEventListener("click", function () {
   time__section.classList.toggle("time__toggle");
   secondary.classList.toggle("hide__sec"); // gsap.set(".slider", { transformOrigin: "50% 50%"})
 
+  secondary.classList.toggle("dark__mode");
   list__values.forEach(function (item) {
+    item.classList.toggle("light__mode");
+  });
+  list__label.forEach(function (item) {
     item.classList.toggle("light__mode");
   });
 
@@ -237,10 +259,9 @@ toggleSwitch.addEventListener("click", function () {
     }); // gsap.from(secondary, {duration: 2, y: -50, ease: "back"})
 
     gsap.from(secondary, {
-      duration: 3,
-      y: 100,
-      opacity: 0,
-      scale: 0.5
+      duration: 1,
+      x: 50,
+      ease: "back"
     });
   }
 
@@ -274,7 +295,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50839" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61928" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

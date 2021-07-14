@@ -28,6 +28,7 @@
 .time__status {
     font-size: 6.25rem;
     font-weight: 700;
+    line-height: 1;
 }
 
 .location {
@@ -50,7 +51,25 @@
 }
 
 @media screen and (min-width: 38.75rem) {
+    .time__section {
+        margin-top: 27rem;
+    }
 	.greet__msg__hide {
         display: inline-block;
+    }
+    .greet__msg {
+       font-size: 1.125rem;
+    }
+    .time__status {
+        font-size: 10.9375rem;       
+    }
+    .time__zone {
+        font-size: 2rem;
+    }
+    .location {
+        font-size: 1.125rem;        
+    }
+    .time__toggle {
+        margin-top: 5rem;
     }
 }

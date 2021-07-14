@@ -85,10 +85,6 @@ body {
   color: #ffffff;
 }
 
-p {
-  font-size: 0.75rem;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -108,10 +104,14 @@ p {
 
 @media screen and (min-width: 38.75rem) {
   .primary {
-    padding: 0 4rem 2rem;
+    padding: 2.5rem 4rem 2rem;
   }
 }
 @media screen and (min-width: 67.5rem) {
+  .primary {
+    padding: 1.5rem 10.3125rem 2rem;
+  }
+
   .time__location {
     display: flex;
     justify-content: space-between;
@@ -155,16 +155,15 @@ p {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  flex: 1 1 20%;
   display: flex;
   justify-content: right;
 }
 
 .quortations {
-  flex: 1 1 80%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin-right: 1rem;
 }
 
 .author {
@@ -181,6 +180,17 @@ p {
   display: none;
 }
 
+.quortes,
+.author {
+  font-size: 0.75rem;
+}
+
+@media screen and (min-width: 38.75rem) {
+  .quortes,
+.author {
+    font-size: 1.125rem;
+  }
+}
 .time__section {
   margin-top: 16rem;
 }
@@ -210,6 +220,7 @@ p {
 .time__status {
   font-size: 6.25rem;
   font-weight: 700;
+  line-height: 1;
 }
 
 .location {
@@ -233,8 +244,32 @@ p {
 }
 
 @media screen and (min-width: 38.75rem) {
+  .time__section {
+    margin-top: 27rem;
+  }
+
   .greet__msg__hide {
     display: inline-block;
+  }
+
+  .greet__msg {
+    font-size: 1.125rem;
+  }
+
+  .time__status {
+    font-size: 10.9375rem;
+  }
+
+  .time__zone {
+    font-size: 2rem;
+  }
+
+  .location {
+    font-size: 1.125rem;
+  }
+
+  .time__toggle {
+    margin-top: 5rem;
   }
 }
 .switch {
@@ -256,6 +291,7 @@ p {
 .more {
   color: black;
   padding-left: 1.5rem;
+  font-size: 1rem;
 }
 
 .switch input {
@@ -268,6 +304,11 @@ p {
   margin-top: 3rem;
 }
 
+@media screen and (min-width: 38.75rem) {
+  .swithCtl {
+    margin-top: 5rem;
+  }
+}
 /*
 
 
@@ -352,6 +393,14 @@ input:checked+.slider:before {
   color: #303030;
 }
 
+.dark__mode {
+  background-color: #303030;
+}
+
+.light__mode {
+  color: #ffffff;
+}
+
 .hide__sec {
   display: none;
 }
@@ -370,10 +419,22 @@ input:checked+.slider:before {
   .list__items {
     flex-direction: column;
   }
+
+  .list__label {
+    font-size: 0.8125rem;
+  }
+
+  .list__value {
+    font-size: 2.5rem;
+  }
 }
 @media screen and (min-width: 67.5rem) {
   .secondary {
     min-height: 40vh;
+  }
+
+  .secondary__data {
+    padding: 4rem 10.3125rem;
   }
 }
 
