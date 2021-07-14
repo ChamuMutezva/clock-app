@@ -272,6 +272,23 @@ body {
     margin-top: 5rem;
   }
 }
+@media screen and (min-width: 67.5rem) {
+  .location {
+    font-size: 1.5rem;
+  }
+
+  .greet__msg {
+    font-size: 1.25rem;
+  }
+
+  .time__status {
+    font-size: 12.5rem;
+  }
+
+  .time__zone {
+    font-size: 2.5rem;
+  }
+}
 .switch {
   position: relative;
   display: flex;
@@ -435,6 +452,10 @@ input:checked+.slider:before {
 
   .secondary__data {
     padding: 4rem 10.3125rem;
+  }
+
+  .list__value {
+    font-size: 2.5rem;
   }
 }
 

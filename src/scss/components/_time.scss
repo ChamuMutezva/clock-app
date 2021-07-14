@@ -22,7 +22,7 @@
 }
 
 .greet__msg__hide {
-	display: none;
+    display: none;
 }
 
 .time__status {
@@ -39,8 +39,9 @@
 .time__toggle {
     margin-top: 4rem;
 }
+
 .time__icon__img {
-	display: block;
+    display: block;
 }
 
 .hide__icon {
@@ -54,22 +55,43 @@
     .time__section {
         margin-top: 27rem;
     }
-	.greet__msg__hide {
+
+    .greet__msg__hide {
         display: inline-block;
     }
+
     .greet__msg {
-       font-size: 1.125rem;
+        font-size: 1.125rem;
     }
+
     .time__status {
-        font-size: 10.9375rem;       
+        font-size: 10.9375rem;
     }
+
     .time__zone {
         font-size: 2rem;
     }
+
     .location {
-        font-size: 1.125rem;        
+        font-size: 1.125rem;
     }
+
     .time__toggle {
         margin-top: 5rem;
+    }
+}
+
+@media screen and (min-width: 67.5rem) {
+    .location {
+        font-size: 1.5rem;
+    }
+    .greet__msg {
+        font-size: 1.25rem;
+    }
+    .time__status {
+        font-size: 12.5rem;
+    }
+    .time__zone {
+        font-size: 2.5rem;
     }
 }
