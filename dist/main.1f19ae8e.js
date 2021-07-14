@@ -209,11 +209,16 @@ toggleSwitch.addEventListener("click", function () {
   var toggle__intro = document.querySelector(".intro");
   var time__section = document.querySelector(".time__section");
   var slider = document.querySelector(".slider");
+  var list__label = document.querySelectorAll(".list__label");
   more.innerHTML === "more" ? more.innerHTML = "less" : more.innerHTML = "more";
   console.log(more.innerHTML);
   toggle__intro.classList.toggle("intro__out");
   time__section.classList.toggle("time__toggle");
   secondary.classList.toggle("hide__sec"); // gsap.set(".slider", { transformOrigin: "50% 50%"})
+
+  list__values.forEach(function (item) {
+    item.classList.toggle("light__mode");
+  });
 
   if (flip) {
     gsap.to(".slider", {
@@ -269,7 +274,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61973" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50839" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

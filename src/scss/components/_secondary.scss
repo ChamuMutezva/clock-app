@@ -36,6 +36,14 @@
 	color: abstracts.$mid-grey;
 }
 
+.dark__mode {
+background-color: abstracts.$mid-grey;
+}
+
+.light__mode {
+	color: abstracts.$white;
+}
+
 .hide__sec {
 	display: none;
 }

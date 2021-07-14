@@ -44,11 +44,11 @@ const timeApi = () => {
                 wrapper.classList.remove("evening") :
                 wrapper.classList.add("evening")
 
-            hours < 5 || hours >= 18 ? 
-            greet__msg.innerHTML = `Good Evening, <span class="greet__msg__hide">it's currently</span>` :
+            hours < 5 || hours >= 18 ?
+                greet__msg.innerHTML = `Good Evening, <span class="greet__msg__hide">it's currently</span>` :
                 hours < 12 ?
-                 greet__msg.innerHTML = `Good Morning, <span class="greet__msg__hide">it's currently</span>` :
-                greet__msg.innerHTML = `Good Afternoon, <span class="greet__msg__hide">it's currently</span>`
+                    greet__msg.innerHTML = `Good Morning, <span class="greet__msg__hide">it's currently</span>` :
+                    greet__msg.innerHTML = `Good Afternoon, <span class="greet__msg__hide">it's currently</span>`
 
             hours >= 6 && hours <= 17 ?
                 greet__img[0].classList.remove("hide__icon") :
@@ -113,26 +113,34 @@ setInterval(() => {
 }, 60000)
 
 toggleSwitch.addEventListener("click", () => {
-  
+
     const more = document.querySelector(".more")
     const secondary = document.querySelector(".secondary")
     const toggle__intro = document.querySelector(".intro")
     const time__section = document.querySelector(".time__section")
     const slider = document.querySelector(".slider")
+    const list__label = document.querySelectorAll(".list__label")
+
     more.innerHTML === "more" ? more.innerHTML = "less" : more.innerHTML = "more"
     console.log(more.innerHTML)
     toggle__intro.classList.toggle("intro__out")
     time__section.classList.toggle("time__toggle")
     secondary.classList.toggle("hide__sec")
-   // gsap.set(".slider", { transformOrigin: "50% 50%"})
-  
-   if (flip) {
-    gsap.to(".slider", { duration: 1,  rotation: 180 })
-    gsap.to(secondary, {duration: 2, y: 50, ease: "elastic"})
-   } else {
-    gsap.to(".slider", { duration: 1,  rotation: -180 })
-   // gsap.from(secondary, {duration: 2, y: -50, ease: "back"})
-    gsap.from(secondary, {duration: 3, y: 100, opacity: 0, scale: 0.5});
-   }
-   flip = !flip
+    // gsap.set(".slider", { transformOrigin: "50% 50%"})
+
+    
+    list__values.forEach(item => {
+        item.classList.toggle("light__mode")
+    })
+
+    if (flip) {
+        gsap.to(".slider", { duration: 1, rotation: 180 })
+        gsap.to(secondary, { duration: 2, y: 50, ease: "elastic" })
+
+    } else {
+        gsap.to(".slider", { duration: 1, rotation: -180 })
+        // gsap.from(secondary, {duration: 2, y: -50, ease: "back"})
+        gsap.from(secondary, { duration: 3, y: 100, opacity: 0, scale: 0.5 });
+    }
+    flip = !flip
 })
