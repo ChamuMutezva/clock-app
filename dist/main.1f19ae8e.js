@@ -248,16 +248,7 @@ toggleSwitch.addEventListener("click", function () {
   console.log(more.innerHTML);
   toggle__intro.classList.toggle("intro__out");
   time__section.classList.toggle("time__toggle");
-  secondary.classList.toggle("hide__sec"); // gsap.set(".slider", { transformOrigin: "50% 50%"})
-  //   secondary.classList.toggle("dark__mode")
-
-  /*  list__values.forEach(item => {
-        item.classList.toggle("light__mode")
-    })
-    list__label.forEach(item => {
-        item.classList.toggle("light__mode")
-    })
-  */
+  secondary.classList.toggle("hide__sec");
 
   if (flip) {
     gsap.to(".slider", {
@@ -277,7 +268,7 @@ toggleSwitch.addEventListener("click", function () {
 
     gsap.from(secondary, {
       duration: 1,
-      x: 50,
+      y: 0,
       ease: "back"
     });
   }

@@ -160,17 +160,7 @@ toggleSwitch.addEventListener("click", () => {
     toggle__intro.classList.toggle("intro__out")
     time__section.classList.toggle("time__toggle")
     secondary.classList.toggle("hide__sec")
-    // gsap.set(".slider", { transformOrigin: "50% 50%"})
-
-    //   secondary.classList.toggle("dark__mode")
-    /*  list__values.forEach(item => {
-          item.classList.toggle("light__mode")
-      })
-      list__label.forEach(item => {
-          item.classList.toggle("light__mode")
-      })
-  */
-
+   
     if (flip) {
         gsap.to(".slider", { duration: 1, rotation: 180 })
         gsap.to(secondary, { duration: 2, y: 50, ease: "elastic" })
@@ -178,7 +168,7 @@ toggleSwitch.addEventListener("click", () => {
     } else {
         gsap.to(".slider", { duration: 1, rotation: -180 })
         // gsap.from(secondary, {duration: 2, y: -50, ease: "back"})
-        gsap.from(secondary, { duration: 1, x: 50, ease: "back" });
+        gsap.from(secondary, { duration: 1, y: 0, ease: "back" });
     }
     flip = !flip
 })
