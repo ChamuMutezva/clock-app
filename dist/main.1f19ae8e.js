@@ -145,24 +145,28 @@ var timeApi = function timeApi() {
     //  console.log(data.datetime)
     var greet__msg = document.querySelector(".greet__msg");
     var greet__img = Array.from(document.querySelectorAll(".time__icon__img"));
+    var secondary = document.querySelector(".secondary");
+    var list__label = document.querySelectorAll(".list__label");
     var date__arr = data.datetime.split("T");
     var time__arr = date__arr[1].split(".");
     current__date = date__arr[0];
     current__time = time__arr[0];
     hours = Number(current__time.split(":")[0]);
     min = Number(current__time.split(":")[1]);
-    /*   console.log(greet__img)
-       console.log(current__date)
-       console.log(time__arr)
-       console.log(current__time)
-       console.log(min)
-       console.log(Number(hours)) */
-    //  greet__img[1].classList.add("hide__icon")
-
     hours <= 12 ? wrapper.classList.remove("evening") : wrapper.classList.add("evening");
-    hours < 5 || hours >= 18 ? greet__msg.innerHTML = "Good Evening, <span class=\"greet__msg__hide\">it's currently</span>" : hours < 12 ? greet__msg.innerHTML = "Good Morning, <span class=\"greet__msg__hide\">it's currently</span>" : greet__msg.innerHTML = "Good Afternoon, <span class=\"greet__msg__hide\">it's currently</span>";
-    hours >= 6 && hours <= 17 ? greet__img[0].classList.remove("hide__icon") : greet__img[0].classList.add("hide__icon");
-    hours >= 6 && hours <= 17 ? greet__img[1].classList.add("hide__icon") : greet__img[1].classList.remove("hide__icon");
+    hours < 5 || hours >= 18 ? greet__msg.innerHTML = "Good Evening<span class=\"greet__msg__hide\">, it's currently</span>" : hours < 12 ? greet__msg.innerHTML = "Good Morning<span class=\"greet__msg__hide\">, it's currently</span>" : greet__msg.innerHTML = "Good Afternoon<span class=\"greet__msg__hide\">, it's currently</span>";
+    hours >= 6 && hours <= 17 ? greet__img[0].classList.remove("hide__icon") : greet__img[1].classList.add("hide__icon");
+    hours >= 6 && hours <= 17 ? greet__img[0].classList.add("hide__icon") : greet__img[1].classList.remove("hide__icon");
+    hours >= 6 && hours <= 17 ? ( //  greet__img[0].classList.remove("hide__icon"),
+    secondary.classList.remove("dark__mode"), list__values.forEach(function (item) {
+      item.classList.remove("light__mode");
+    }), list__label.forEach(function (item) {
+      item.classList.remove("light__mode");
+    })) : (secondary.classList.add("dark__mode"), list__values.forEach(function (item) {
+      item.classList.add("light__mode");
+    }), list__label.forEach(function (item) {
+      item.classList.add("light__mode");
+    }));
     console.log(hours);
     time__zone.innerHTML = data.abbreviation;
     console.log(greet__img[0]);
@@ -225,22 +229,22 @@ toggleSwitch.addEventListener("click", function () {
   var more = document.querySelector(".more");
   var secondary = document.querySelector(".secondary");
   var toggle__intro = document.querySelector(".intro");
-  var time__section = document.querySelector(".time__section");
-  var slider = document.querySelector(".slider");
-  var list__label = document.querySelectorAll(".list__label");
+  var time__section = document.querySelector(".time__section"); //  const slider = document.querySelector(".slider")
+
   more.innerHTML === "more" ? more.innerHTML = "less" : more.innerHTML = "more";
   console.log(more.innerHTML);
   toggle__intro.classList.toggle("intro__out");
   time__section.classList.toggle("time__toggle");
   secondary.classList.toggle("hide__sec"); // gsap.set(".slider", { transformOrigin: "50% 50%"})
+  //   secondary.classList.toggle("dark__mode")
 
-  secondary.classList.toggle("dark__mode");
-  list__values.forEach(function (item) {
-    item.classList.toggle("light__mode");
-  });
-  list__label.forEach(function (item) {
-    item.classList.toggle("light__mode");
-  });
+  /*  list__values.forEach(item => {
+        item.classList.toggle("light__mode")
+    })
+    list__label.forEach(item => {
+        item.classList.toggle("light__mode")
+    })
+  */
 
   if (flip) {
     gsap.to(".slider", {
@@ -295,7 +299,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52380" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58535" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

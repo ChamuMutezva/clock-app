@@ -4,6 +4,7 @@
 	background-color: abstracts.$lt-grey;
 	position: relative;
 	bottom: 0;
+	opacity: 0.95;
 	//color: abstracts.$mid-grey;
 }
 
@@ -38,7 +39,7 @@
 }
 
 .dark__mode {
-background-color: abstracts.$mid-grey;
+	background-color: abstracts.$black;
 }
 
 .light__mode {
@@ -68,8 +69,9 @@ background-color: abstracts.$mid-grey;
 	.list__label {
 		font-size: 0.8125rem;
 	}
+
 	.list__value {
-		font-size: 2.5rem;		
+		font-size: 2.5rem;
 	}
 }
 
@@ -77,10 +79,22 @@ background-color: abstracts.$mid-grey;
 	.secondary {
 		min-height: 40vh;
 	}
+
 	.secondary__data {
 		padding: 4rem 10.3125rem;
-		
+		position: relative;
+		&::before {
+			position: absolute;
+			content: "";
+			width: 1px;
+			height: 70%;
+			background: white;
+			left: 47%;
+			top: 15%;
+		}
+
 	}
+
 	.list__value {
 		font-size: 2.5rem;
 	}

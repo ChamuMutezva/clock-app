@@ -124,8 +124,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #303030;
-  background-blend-mode: overlay;
-  padding: 2rem 0 0;
+  padding: 2rem 0 3rem;
   position: relative;
 }
 
@@ -208,7 +207,7 @@ body {
 }
 
 .greet__msg {
-  font-weight: 100;
+  font-weight: 300;
   font-size: 0.9375rem;
   text-transform: uppercase;
 }
@@ -379,6 +378,7 @@ input:checked+.slider:before {
   background-color: #d8d8d8;
   position: relative;
   bottom: 0;
+  opacity: 0.95;
 }
 
 .secondary__data {
@@ -411,7 +411,7 @@ input:checked+.slider:before {
 }
 
 .dark__mode {
-  background-color: #303030;
+  background-color: #000000;
 }
 
 .light__mode {
@@ -452,6 +452,16 @@ input:checked+.slider:before {
 
   .secondary__data {
     padding: 4rem 10.3125rem;
+    position: relative;
+  }
+  .secondary__data::before {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 70%;
+    background: white;
+    left: 47%;
+    top: 15%;
   }
 
   .list__value {
