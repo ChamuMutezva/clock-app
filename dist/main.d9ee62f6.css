@@ -124,6 +124,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #303030;
+  background-blend-mode: overlay;
   padding: 2rem 0 3rem;
   position: relative;
 }

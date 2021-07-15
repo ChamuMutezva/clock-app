@@ -45,20 +45,25 @@ const timeApi = () => {
                 hours < 12 ?
                     greet__msg.innerHTML = `Good Morning<span class="greet__msg__hide">, it's currently</span>` :
                     greet__msg.innerHTML = `Good Afternoon<span class="greet__msg__hide">, it's currently</span>`
-
+            /*
             hours >= 6 && hours <= 17 ?
                 greet__img[0].classList.remove("hide__icon") :
-                greet__img[1].classList.add("hide__icon")
+                greet__img[0].classList.add("hide__icon")
 
             hours >= 6 && hours <= 17 ?
-                greet__img[0].classList.add("hide__icon") :
+                greet__img[1].classList.add("hide__icon") :
                 greet__img[1].classList.remove("hide__icon")
-
+            */
 
 
             hours >= 6 && hours <= 17 ?
                 (
-                    //  greet__img[0].classList.remove("hide__icon"),
+                    // show the icon of the sun between 6hrs and 17hrs inclusive
+                    // by removing the hide class
+                    greet__img[0].classList.remove("hide__icon"),
+                    // hide the moon icon when the sun icon is present
+                    //by adding the hide class. 
+                    greet__img[1].classList.add("hide__icon"),
                     secondary.classList.remove("dark__mode"),
                     list__values.forEach(item => {
                         item.classList.remove("light__mode")
@@ -68,6 +73,11 @@ const timeApi = () => {
                     })
                 ) :
                 (
+                    // hide the icon of the sun between 18hrs and 5hrs inclusive
+                    // by adding the hide class - 18hrs to 23hrs and 00hr to 05hrs
+                    greet__img[0].classList.add("hide__icon"),
+                    // show the moon icon then.
+                    greet__img[1].classList.remove("hide__icon"),
                     secondary.classList.add("dark__mode"),
                     list__values.forEach(item => {
                         item.classList.add("light__mode")
