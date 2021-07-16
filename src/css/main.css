@@ -124,8 +124,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #303030;
+  background-blend-mode: overlay;
   padding: 2rem 0 3rem;
   position: relative;
+  max-width: 1480px;
+  margin: auto;
 }
 
 .evening {
@@ -153,9 +156,13 @@ body {
 .refresh {
   background-color: transparent;
   border: none;
-  cursor: pointer;
   display: flex;
   justify-content: right;
+}
+.refresh:hover, .refresh:focus {
+  cursor: pointer;
+  outline: dashed currentColor;
+  outline-offset: 0.25em;
 }
 
 .quortations {
@@ -190,8 +197,17 @@ body {
     font-size: 1.125rem;
   }
 }
+@media screen and (min-width: 67.5rem) {
+  .intro {
+    max-width: 60%;
+  }
+}
 .time__section {
   margin-top: 16rem;
+}
+
+.time__zone {
+  text-decoration: none;
 }
 
 .time__sectionA {
@@ -298,6 +314,11 @@ body {
   padding: 0.4rem;
   border-radius: 30px;
 }
+.switch:hover, .switch:focus {
+  cursor: pointer;
+  outline: dashed currentColor;
+  outline-offset: 0.25em;
+}
 
 .slider {
   width: 2rem;
@@ -320,60 +341,15 @@ body {
   margin-top: 3rem;
 }
 
+.refresh__img {
+  min-width: 1rem;
+}
+
 @media screen and (min-width: 38.75rem) {
   .swithCtl {
     margin-top: 5rem;
   }
 }
-/*
-
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: hsl(237, 63%, 64%);
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked+.slider {
-    background-color: #ccc;
-}
-
-input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked+.slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-*/
 .secondary {
   background-color: #d8d8d8;
   position: relative;
