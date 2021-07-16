@@ -156,9 +156,13 @@ body {
 .refresh {
   background-color: transparent;
   border: none;
-  cursor: pointer;
   display: flex;
   justify-content: right;
+}
+.refresh:hover, .refresh:focus {
+  cursor: pointer;
+  outline: dashed currentColor;
+  outline-offset: 0.25em;
 }
 
 .quortations {
@@ -200,6 +204,10 @@ body {
 }
 .time__section {
   margin-top: 16rem;
+}
+
+.time__zone {
+  text-decoration: none;
 }
 
 .time__sectionA {
@@ -305,6 +313,11 @@ body {
   justify-content: space-between;
   padding: 0.4rem;
   border-radius: 30px;
+}
+.switch:hover, .switch:focus {
+  cursor: pointer;
+  outline: dashed currentColor;
+  outline-offset: 0.25em;
 }
 
 .slider {

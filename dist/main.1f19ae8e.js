@@ -141,8 +141,8 @@ var timeApi = function timeApi() {
   .then(function (response) {
     return response.json();
   }).then(function (data) {
-    // console.log(data)
-    //  console.log(data.datetime)
+    console.log(data); //  console.log(data.datetime)
+
     var greet__msg = document.querySelector(".greet__msg");
     var greet__img = Array.from(document.querySelectorAll(".time__icon__img"));
     var secondary = document.querySelector(".secondary");
@@ -181,6 +181,7 @@ var timeApi = function timeApi() {
       item.classList.add("light__mode");
     }));
     console.log(hours);
+    time__zone.setAttribute("title", data.timezone);
     time__zone.innerHTML = data.abbreviation;
     console.log(greet__img[0]);
     console.log(greet__img[1]);
@@ -225,8 +226,8 @@ var reFreshQuortes = function reFreshQuortes() {
 fetch('https://freegeoip.app/json/').then(function (response) {
   return response.json();
 }).then(function (data) {
-  //  console.log(data)
-  //  console.log(data.time_zone)
+  console.log(data); //  console.log(data.time_zone)
+
   located.innerHTML = "In ".concat(data.city, ", ").concat(data.country_name);
   list__values[0].innerHTML = data.time_zone;
 });

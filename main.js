@@ -22,7 +22,7 @@ const timeApi = () => {
     fetch('https://worldtimeapi.org/api/ip') //'https://worldtimeapi.org/api/ip'
         .then(response => response.json())
         .then(data => {
-            // console.log(data)
+            console.log(data)
             //  console.log(data.datetime)
             const greet__msg = document.querySelector(".greet__msg")
             const greet__img = Array.from(document.querySelectorAll(".time__icon__img"))
@@ -71,7 +71,8 @@ const timeApi = () => {
                     list__label.forEach(item => {
                         item.classList.remove("light__mode")
                     })
-                ) :
+                ) 
+                :
                 (
                     // hide the icon of the sun between 18hrs and 5hrs inclusive
                     // by adding the hide class - 18hrs to 23hrs and 00hr to 05hrs
@@ -87,6 +88,7 @@ const timeApi = () => {
                     }))
 
             console.log(hours)
+            time__zone.setAttribute("title", data.timezone)
             time__zone.innerHTML = data.abbreviation
             console.log(greet__img[0])
             console.log(greet__img[1])
@@ -126,7 +128,7 @@ const reFreshQuortes = () => {
 fetch('https://freegeoip.app/json/')
     .then(response => response.json())
     .then(data => {
-        //  console.log(data)
+         console.log(data)
         //  console.log(data.time_zone)
         located.innerHTML = `In ${data.city}, ${data.country_name}`
         list__values[0].innerHTML = data.time_zone
